@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\L3AQTN_HFT_202231.Logic\L3AQTN_HFT_202231.Logic.csproj" />
+    <ProjectReference Include="..\L3AQTN_HFT_202231.Repository\L3AQTN_HFT_202231.Repository.csproj" />
     <ProjectReference Include="..\L3AQTN_HFT_202231.Models\L3AQTN_HFT_202231.Models.csproj" />
   </ItemGroup>
 </Project>

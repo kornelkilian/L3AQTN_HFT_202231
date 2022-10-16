@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj": {}
+    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {}
   },
   "projects": {
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj": {
+    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj",
-        "projectName": "L3AQTN_HFT_202231.Client",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj",
+        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
+        "projectName": "L3AQTN_HFT_202231.Models",
+        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
         "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/obj/",
+        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kornel/.nuget/NuGet/NuGet.Config"
@@ -25,11 +25,7 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -58,10 +54,6 @@
               "version": "[5.0.0, 5.0.0]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.osx-x64",
-              "version": "[5.0.17, 5.0.17]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Ref",
               "version": "[5.0.0, 5.0.0]"
             }
@@ -75,14 +67,14 @@
         }
       }
     },
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
+    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
-        "projectName": "L3AQTN_HFT_202231.Models",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
+        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj",
+        "projectName": "L3AQTN_HFT_202231.Repository",
+        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj",
         "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/",
+        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kornel/.nuget/NuGet/NuGet.Config"
@@ -96,7 +88,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
+                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

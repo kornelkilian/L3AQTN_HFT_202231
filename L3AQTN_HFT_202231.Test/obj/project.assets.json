@@ -2,6 +2,20 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "L3AQTN_HFT_202231.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "L3AQTN_HFT_202231.Models": "1.0.0",
+          "L3AQTN_HFT_202231.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/L3AQTN_HFT_202231.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/L3AQTN_HFT_202231.Logic.dll": {}
+        }
+      },
       "L3AQTN_HFT_202231.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -11,19 +25,44 @@
         "runtime": {
           "bin/placeholder/L3AQTN_HFT_202231.Models.dll": {}
         }
+      },
+      "L3AQTN_HFT_202231.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "L3AQTN_HFT_202231.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/L3AQTN_HFT_202231.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/L3AQTN_HFT_202231.Repository.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "L3AQTN_HFT_202231.Logic/1.0.0": {
+      "type": "project",
+      "path": "../L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj",
+      "msbuildProject": "../L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj"
+    },
     "L3AQTN_HFT_202231.Models/1.0.0": {
       "type": "project",
       "path": "../L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
       "msbuildProject": "../L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+    },
+    "L3AQTN_HFT_202231.Repository/1.0.0": {
+      "type": "project",
+      "path": "../L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj",
+      "msbuildProject": "../L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "L3AQTN_HFT_202231.Models >= 1.0.0"
+      "L3AQTN_HFT_202231.Logic >= 1.0.0",
+      "L3AQTN_HFT_202231.Models >= 1.0.0",
+      "L3AQTN_HFT_202231.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -32,11 +71,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj",
-      "projectName": "L3AQTN_HFT_202231.Client",
-      "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj",
+      "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj",
+      "projectName": "L3AQTN_HFT_202231.Test",
+      "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj",
       "packagesPath": "/Users/kornel/.nuget/packages/",
-      "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/obj/",
+      "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kornel/.nuget/NuGet/NuGet.Config"
@@ -51,8 +90,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj": {
+              "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj"
+            },
             "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
               "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+            },
+            "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {
+              "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj"
             }
           }
         }
@@ -81,10 +126,6 @@
           {
             "name": "Microsoft.AspNetCore.App.Ref",
             "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.osx-x64",
-            "version": "[5.0.17, 5.0.17]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",

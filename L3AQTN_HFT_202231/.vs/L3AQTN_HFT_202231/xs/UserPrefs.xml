@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{25799DAA-1DC9-455E-9AF0-9F78F61F58AC}|Default">
+  <MonoDevelop.Ide.ItemProperties.L3AQTN__HFT__202231.Client PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="L3AQTN_HFT_202231.Client/Program.cs">
+    <Files>
+      <File FileName="L3AQTN_HFT_202231.Client/Program.cs" Line="14" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="L3AQTN_HFT_202231" expanded="True">
+            <Node name="L3AQTN_HFT_202231.Client" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

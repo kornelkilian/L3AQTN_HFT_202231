@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kSS6kRfGRsCz7zuQjoBFDQ4MY4hYbU+V9Lqh70g6eWGHHMawEnpepqF0DmnEEQYuckIfsHUP5CGk775qLuTWIw==",
+  "success": true,
+  "projectFilePath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj",
+  "expectedPackageFiles": [
+    "/Users/kornel/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/kornel/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "epdl56MIcT5ugYQlvBm3CU3BNV6QKnxYUVdSoIrcw3qv9/NMDt/iW5Q3NWxi18Ax62W0OcwF+Nklb/uHhS+3cQ==",
+  "dgSpecHash": "8JMOSaOJypk7/oottFafhmK1WTSegZD2gmFVd4OSuILURfhnw0d8xPw+eTWZXOY1/wFXSHWUINQyCt6ieP6muA==",
   "success": true,
-  "projectFilePath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Client/L3AQTN_HFT_202231.Client.csproj",
+  "projectFilePath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Endpoint/L3AQTN_HFT_202231.Endpoint.csproj",
   "expectedPackageFiles": [
     "/Users/kornel/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
     "/Users/kornel/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512",
