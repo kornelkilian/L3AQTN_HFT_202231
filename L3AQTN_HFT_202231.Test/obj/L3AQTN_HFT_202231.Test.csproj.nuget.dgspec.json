@@ -1,36 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj": {}
+    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Test\\L3AQTN_HFT_202231.Test.csproj": {}
   },
   "projects": {
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj": {
+    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\L3AQTN_HFT_202231.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\L3AQTN_HFT_202231.Logic.csproj",
         "projectName": "L3AQTN_HFT_202231.Logic",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj",
-        "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/obj/",
+        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\L3AQTN_HFT_202231.Logic.csproj",
+        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kornel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj"
               },
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj"
               }
             }
           }
@@ -44,6 +46,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "InMemoryDb": {
+              "target": "Package",
+              "version": "[0.6.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,41 +63,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
+    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
+        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
         "projectName": "L3AQTN_HFT_202231.Models",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj",
-        "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/",
+        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
+        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kornel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -107,6 +107,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "InMemoryDb": {
+              "target": "Package",
+              "version": "[0.6.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -118,49 +124,41 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {
+    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj",
         "projectName": "L3AQTN_HFT_202231.Repository",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj",
-        "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/obj/",
+        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj",
+        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kornel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj"
               }
             }
           }
@@ -174,6 +172,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "InMemoryDb": {
+              "target": "Package",
+              "version": "[0.6.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -185,55 +193,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj": {
+    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Test\\L3AQTN_HFT_202231.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj",
+        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Test\\L3AQTN_HFT_202231.Test.csproj",
         "projectName": "L3AQTN_HFT_202231.Test",
-        "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/L3AQTN_HFT_202231.Test.csproj",
-        "packagesPath": "/Users/kornel/.nuget/packages/",
-        "outputPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Test/obj/",
+        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Test\\L3AQTN_HFT_202231.Test.csproj",
+        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kornel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Logic/L3AQTN_HFT_202231.Logic.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\L3AQTN_HFT_202231.Logic.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Logic\\L3AQTN_HFT_202231.Logic.csproj"
               },
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/L3AQTN_HFT_202231.Models.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj"
               },
-              "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj": {
-                "projectPath": "/Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Repository/L3AQTN_HFT_202231.Repository.csproj"
+              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj": {
+                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Repository\\L3AQTN_HFT_202231.Repository.csproj"
               }
             }
           }
@@ -247,6 +247,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "InMemoryDb": {
+              "target": "Package",
+              "version": "[0.6.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -258,22 +264,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

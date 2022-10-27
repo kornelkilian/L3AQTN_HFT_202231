@@ -1,8 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="InMemoryDb" Version="0.6.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\L3AQTN_HFT_202231.Models\L3AQTN_HFT_202231.Models.csproj" />
