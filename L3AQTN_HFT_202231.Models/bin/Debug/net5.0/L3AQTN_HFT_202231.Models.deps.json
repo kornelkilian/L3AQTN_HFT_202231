@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "L3AQTN_HFT_202231.Models/1.0.0": {
+        "runtime": {
+          "L3AQTN_HFT_202231.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "L3AQTN_HFT_202231.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
