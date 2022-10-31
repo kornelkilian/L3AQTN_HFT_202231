@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{25799DAA-1DC9-455E-9AF0-9F78F61F58AC}|Default">
-  <MonoDevelop.Ide.ItemProperties.Shared.L3AQTN__HFT__202231.Models FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Logic FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Test FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="L3AQTN_HFT_202231.Models/Class1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="L3AQTN_HFT_202231.Repository/BusRepository.cs">
     <Files>
       <File FileName="L3AQTN_HFT_202231.Client/Program.cs" />
-      <File FileName="L3AQTN_HFT_202231.Models/Class1.cs" Line="3" Column="11" />
-      <File FileName="L3AQTN_HFT_202231.Logic/Class1.cs" Line="10" Column="1" />
-      <File FileName="L3AQTN_HFT_202231.Repository/Class1.cs" />
       <File FileName="L3AQTN_HFT_202231.Test/Class1.cs" />
+      <File FileName="L3AQTN_HFT_202231.Logic/BusLogic.cs" />
+      <File FileName="L3AQTN_HFT_202231.Logic/OwnerLogic.cs" />
+      <File FileName="L3AQTN_HFT_202231.Models/Brand.cs" />
+      <File FileName="L3AQTN_HFT_202231.Repository/BrandRepository.cs" />
+      <File FileName="L3AQTN_HFT_202231.Repository/BusDbContext.cs" />
+      <File FileName="L3AQTN_HFT_202231.Repository/BusRepository.cs" Line="15" Column="6" />
+      <File FileName="L3AQTN_HFT_202231.Repository/OwnerRepository.cs" />
+      <File FileName="L3AQTN_HFT_202231.Logic/BrandLogic.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,23 +19,27 @@
           <Node name="L3AQTN_HFT_202231" expanded="True">
             <Node name="Backend" expanded="True">
               <Node name="L3AQTN_HFT_202231.Logic" expanded="True" />
+              <Node name="L3AQTN_HFT_202231.Repository" expanded="True" />
             </Node>
-            <Node name="Frontend" expanded="True" />
+            <Node name="Frontend" expanded="True">
+              <Node name="L3AQTN_HFT_202231.Client" expanded="True" />
+            </Node>
             <Node name="Shared" expanded="True">
-              <Node name="L3AQTN_HFT_202231.Models" expanded="True">
-                <Node name="Class1.cs" selected="True" />
-              </Node>
+              <Node name="L3AQTN_HFT_202231.Models" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Test FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Endpoint FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Frontend.L3AQTN__HFT__202231.Client PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Frontend.L3AQTN__HFT__202231.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Endpoint FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Logic FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.Backend.L3AQTN__HFT__202231.Repository FirstBuild="True" />
+  <MultiItemStartupConfigurations />
 </Properties>
