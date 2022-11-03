@@ -11,6 +11,8 @@ namespace L3AQTN_HFT_202231.Repository
         public DbSet<Bus> Buses { get; set; }
         public DbSet<Brand> Brands { get; set; }
 
+        public DbSet<Owner> Owners { get; set; }
+
         private object DbCreationLock = new object();
         public BusDbContext()
         {
@@ -30,9 +32,10 @@ namespace L3AQTN_HFT_202231.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-               // optionsBuilder
-                    //.UseLazyLoadingProxies()
-                   // .UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CarDb.mdf;Integrated Security=True");
+                optionsBuilder
+                     .UseInMemoryDatabase("BusDB")
+                    .UseLazyLoadingProxies();
+                    ;
             }
         }
 
@@ -48,6 +51,8 @@ namespace L3AQTN_HFT_202231.Repository
                             .WithMany(brand => brand.Buses)
                             .HasForeignKey(bus => bus.BrandId)
                             .OnDelete(DeleteBehavior.ClientSetNull));
+
+            
 
             modelBuilder.Entity<Brand>().HasData(brand);
             modelBuilder.Entity<Bus>().HasData(bus, bus2);

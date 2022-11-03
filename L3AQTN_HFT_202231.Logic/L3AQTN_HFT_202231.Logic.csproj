@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="InMemoryDb" Version="0.6.2" />
+    <PackageReference Include="LocalDb" Version="13.9.4" />
   </ItemGroup>
 
   <ItemGroup>

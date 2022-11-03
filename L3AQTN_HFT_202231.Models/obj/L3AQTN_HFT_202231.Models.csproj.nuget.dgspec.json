@@ -43,6 +43,10 @@
             "InMemoryDb": {
               "target": "Package",
               "version": "[0.6.2, )"
+            },
+            "LocalDb": {
+              "target": "Package",
+              "version": "[13.9.4, )"
             }
           },
           "imports": [

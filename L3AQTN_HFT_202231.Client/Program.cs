@@ -1,4 +1,5 @@
-﻿using System;
+﻿using L3AQTN_HFT_202231.Repository;
+using System;
 
 namespace L3AQTN_HFT_202231.Client
 {
@@ -6,7 +7,8 @@ namespace L3AQTN_HFT_202231.Client
     {
         static void Main(string[] args)
         {
-            
+            BusDbContext context = new BusDbContext();
+            var buses = context.Buses.AsQueryable();    
         }
     }
 }

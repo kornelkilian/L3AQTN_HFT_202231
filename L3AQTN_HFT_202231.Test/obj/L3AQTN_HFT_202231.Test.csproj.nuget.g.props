@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\kilma\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)localdb\13.9.4\buildTransitive\LocalDb.props" Condition="Exists('$(NuGetPackageRoot)localdb\13.9.4\buildTransitive\LocalDb.props')" />
+  </ImportGroup>
 </Project>
