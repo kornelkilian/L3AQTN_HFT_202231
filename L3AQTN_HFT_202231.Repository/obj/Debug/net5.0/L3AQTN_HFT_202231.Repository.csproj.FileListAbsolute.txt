@@ -1,5 +1,15 @@
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\bin\Debug\net5.0\L3AQTN_HFT_202231.Repository.deps.json
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\bin\Debug\net5.0\L3AQTN_HFT_202231.Repository.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\bin\Debug\net5.0\L3AQTN_HFT_202231.Repository.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.pdb
 C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.csproj.AssemblyReference.cache
 C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.AssemblyInfoInputs.cache
 C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.AssemblyInfo.cs
 C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.csproj.CoreCompileInputs.cache
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.csproj.CopyComplete
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\refint\L3AQTN_HFT_202231.Repository.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\L3AQTN_HFT_202231.Repository.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Repository\obj\Debug\net5.0\ref\L3AQTN_HFT_202231.Repository.dll

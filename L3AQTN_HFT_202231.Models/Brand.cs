@@ -13,7 +13,7 @@ namespace L3AQTN_HFT_202231.Models
 {
 
 	[Table("brands")]
-	public class Brand
+	public class Brand : IDbEntity
 	{
 		
 

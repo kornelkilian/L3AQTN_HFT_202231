@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace L3AQTN_HFT_202231.Models
 {
 	[Table("owners")]
-	public class Owner
+	public class Owner:IDbEntity
 	{
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -20,6 +20,15 @@ namespace L3AQTN_HFT_202231.Models
         [MaxLength(4)]
         [Required]
         public int ZIPCode { get; set; }
+
+        public void CopyFrom(Owner owner)
+        {
+            this.Id = owner.Id;
+            this.Name = owner.Name;
+            this.ZIPCode = owner.ZIPCode;
+
+            
+        }
     }
 }
 

@@ -38,10 +38,10 @@ namespace L3AQTN_HFT_202231.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var brand = new Brand() { Id = 1, Name = "Citrom" };
-            var bus = new Bus() { Id = 1, BrandId = 1, Model = "C4", Price = 1000 };
-            var bus2 = new Bus() { Id = 2, BrandId = 1, Model = "C5", Price = 1200 };
             var owner = new Owner() { Id = 1, Name = "Gyula" };
+            var brand = new Brand() { Id = 1, Name = "Citrom" };
+            var bus = new Bus() { Id = 1, BrandId = 1, Model = "C4",OwnerId=1, Price = 1000 };
+            var bus2 = new Bus() { Id = 2, BrandId = 1, Model = "C5",OwnerId=1, Price = 1200 };
 
             modelBuilder.Entity<Bus>(entity =>
                             entity.HasOne(bus => bus.Brand)

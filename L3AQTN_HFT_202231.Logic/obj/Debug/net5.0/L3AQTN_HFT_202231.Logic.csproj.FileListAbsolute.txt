@@ -1,0 +1,17 @@
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Logic.deps.json
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Logic.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Logic.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Repository.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Repository.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.csproj.AssemblyReference.cache
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.AssemblyInfoInputs.cache
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.AssemblyInfo.cs
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.csproj.CoreCompileInputs.cache
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.csproj.CopyComplete
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\refint\L3AQTN_HFT_202231.Logic.dll
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\L3AQTN_HFT_202231.Logic.pdb
+C:\Users\kilma\OneDrive\Dokumentumok\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Logic\obj\Debug\net5.0\ref\L3AQTN_HFT_202231.Logic.dll

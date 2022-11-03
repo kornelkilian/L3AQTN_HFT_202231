@@ -10,7 +10,7 @@ namespace L3AQTN_HFT_202231.Models
 {
 
 	[Table("cars")]
-	public class Bus
+	public class Bus : IDbEntity
 	{
 
 
@@ -32,6 +32,7 @@ namespace L3AQTN_HFT_202231.Models
         public int BrandId { get; set; }
         public int? Price { get; set; }
 
+        public int OwnerId { get; set; }
 
         public void CopyFrom(Bus bus)
 		{
@@ -39,6 +40,7 @@ namespace L3AQTN_HFT_202231.Models
 			this.Brand = bus.Brand;
 			this.BrandId = bus.BrandId;
 			this.Price = bus.Price;
+            this.OwnerId = bus.OwnerId;
 		}
 
         public override string ToString()
