@@ -25,7 +25,7 @@ namespace L3AQTN_HFT_202231.Repository
         public BusDbContext(DbContextOptions<BusDbContext> options)
             : base(options)
         {
-
+            //s
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
