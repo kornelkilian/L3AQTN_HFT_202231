@@ -11,6 +11,6 @@ namespace L3AQTN_HFT_202231.Repo
         T Read(int i);
         IEnumerable<T> ReadAll();
 
-        bool Update(T item);
+        void Update(T item);
     }
 }

@@ -18,29 +18,21 @@ namespace L3AQTN_HFT_202231.Repository
             this.context = context;
         }
 
-        public override IEnumerable<Owner> ReadAll()
+        public override Owner Read(int i)
         {
-            {
-                var returnValues = context.Set<Owner>();
-
-                return returnValues;
-            }
+            return context.Owners.FirstOrDefault(o => o.Id == i);
         }
-        public override bool Update(Owner brand)
+
+        public override void Update(Owner owner)
         {
-            var sourceItem = Read(brand.Id);
-            if (sourceItem == null)
+            var sourceItem = Read(owner.Id);
+            foreach (var prop in sourceItem.GetType().GetProperties())
             {
-                return false;
+                prop.SetValue(sourceItem, prop.GetValue(owner));
             }
 
-            //context.Remove(sourceItem);
-            //context.Add(car);
-
-            sourceItem.CopyFrom(brand);
             context.SaveChanges();
 
-            return true;
         }
 
 

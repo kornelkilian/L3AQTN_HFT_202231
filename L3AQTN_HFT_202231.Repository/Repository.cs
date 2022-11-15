@@ -18,28 +18,28 @@ namespace L3AQTN_HFT_202231.Repository
             this.context = context;
         }
 
-        public abstract IEnumerable<T> ReadAll();
-
-
-        public T Read(int i)
+        public IEnumerable<T> ReadAll()
         {
-            return ReadAll().FirstOrDefault(_ => _.Id == i);
+            return context.Set<T>();
         }
+
+
+        public abstract T Read(int i);
+       
 
         public void Create(T entity)
         {
-            context.Add(entity);
+            context.Set<T>().Add(entity);
             context.SaveChanges();
         }
 
         public void Delete(int i)
         {
-            var item = Read(i);
-            context.Remove(item);
+            context.Set<T>().Remove(Read(i));
             context.SaveChanges();
         }
 
-        public abstract bool Update(T item);
+        public abstract void Update(T item);
 
     }
 }
