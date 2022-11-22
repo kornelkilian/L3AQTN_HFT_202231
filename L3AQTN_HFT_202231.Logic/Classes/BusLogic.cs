@@ -23,6 +23,7 @@ namespace L3AQTN_HFT_202231.Logic
             {
                 throw new ArgumentException("Hibás modell név.");
             }
+            repo.Create(item);
         }
 
         public void Delete(int id)

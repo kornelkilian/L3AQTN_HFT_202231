@@ -9,43 +9,56 @@ using System.Linq;
 
 namespace L3AQTN_HFT_202231.Test
 {
+    
     [TestFixture]
     public class BusLogicTests
     {
+        BusLogic logic;
+        Mock<IRepository<Bus>> mockBusRepo;
         public BusLogicTests()
         {
         }
 
-		[Test]
-        public void GetAverageByBrand_CallWithMockedRepo_ReturnsAverage()
+        [SetUp]
+        public void Init()
         {
-            // Arrange GIVEN
-
-            var brand = new Brand() { Id = 1, Name = "Citrom" };
-            var car = new Bus() { Id = 1, BrandId = 1, Model = "C4", Price = 1000 };
-            var car2 = new Bus() { Id = 2, BrandId = 1, Model = "C5", Price = 1200 };
-
-            var carList = new List<Bus> { car, car2 };
-
-            var carRepoMock = new Mock<IRepository<Bus>>(MockBehavior.Strict);
-            var brandRepoMock = new Mock<IRepository<Brand>>();
-
-            carRepoMock.Setup(repo => repo.ReadAll())
-                       .Returns(() => carList);
-
-            var logic = new BusLogic(carRepoMock.Object, brandRepoMock.Object);
-
-            // Act WHEN
-            var result2 = logic.GetAverageByBrand().ToList();
-
-            // Assert THEN
-            Assert.That(result2, Is.Not.Null);
-            Assert.That(result2.Count, Is.EqualTo(1), $"{nameof(result2)}.{nameof(result2.Count)} is not proper");
-            Assert.That(result2.First().AveragePrice, Is.EqualTo(1100));
-            Assert.That(result2.First().AveragePrice, Is.Not.EqualTo(1000));
-
-
+            mockBusRepo = new Mock<IRepository<Bus>>();
+            mockBusRepo.Setup(m => m.ReadAll()).Returns(new List<Bus>()
+            {
+                
+                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1200,OwnerId=10}
+            }.AsQueryable());
+            logic=new BusLogic(mockBusRepo.Object);
+           
         }
+
+		[Test]
+         public void CreateBusWithCorrectModel()
+        {
+            var b = new Bus() { Model = "GOLF",Id=1 };
+
+            logic.Create(b);
+
+            mockBusRepo.Verify(_ => _.Create(b), Times.Once);
+        }
+        [Test]
+        public void CreateBusWithIncorrectModel()
+        {
+            //Modell név nem lehet 2 karakter alatt.
+            var b = new Bus() { Model = "A" };
+            try
+            {
+                logic.Create(b);
+            }
+            catch 
+            {
+
+                
+            }
+
+            mockBusRepo.Verify(r => r.Create(b), Times.Never);
+        }
+       
     }
 }
 
