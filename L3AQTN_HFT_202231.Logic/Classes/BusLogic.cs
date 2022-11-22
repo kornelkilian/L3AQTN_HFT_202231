@@ -72,5 +72,13 @@ namespace L3AQTN_HFT_202231.Logic
                 .Where(x => x.Model == model)
                 .Average(x => x.Price);
         }
+
+        public double? HighestPriceByModel(string model)
+        {
+            return this.repo
+                .ReadAll()
+                .Where(x => x.Model == model)
+                .Max(x => x.Price);
+        }
     }
 }

@@ -98,6 +98,14 @@ namespace L3AQTN_HFT_202231.Test
         }
 
         [Test]
+        public void HighestPriceByModel()
+        {
+            double? h = logic.HighestPriceByModel("MOCK");
+            Assert.That(h, Is.EqualTo(5000));
+        }
+
+
+        [Test]
         public void DeleteBusTest()
         {
             var b = new Bus() { Model = "GOLF", Id = 15 };
