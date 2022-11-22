@@ -23,6 +23,10 @@ namespace L3AQTN_HFT_202231.Logic
             {
                 throw new ArgumentException("Hibás modell név.");
             }
+            if (item.Price==0)
+            {
+                throw new ArgumentException("Busz ára nem lehet nulla");
+            }
             repo.Create(item);
         }
 
@@ -49,6 +53,24 @@ namespace L3AQTN_HFT_202231.Logic
         public void Update(Bus item)
         {
             repo.Update(item);
+        }
+
+        //non crud
+
+        public double? GetAvaragePriceByBrand(Brand brand)
+        {
+            return this.repo
+                .ReadAll()
+                .Where(x => x.Brand == brand)
+                .Average(x => x.Price);
+        }
+
+        public double? GetAvaragePriceByModel(string model)
+        {
+            return this.repo
+                .ReadAll()
+                .Where(x => x.Model == model)
+                .Average(x => x.Price);
         }
     }
 }
