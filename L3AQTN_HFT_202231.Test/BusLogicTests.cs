@@ -6,6 +6,7 @@ using L3AQTN_HFT_202231.Logic;
 using Moq;
 using NUnit.Framework;
 using System.Linq;
+using Microsoft.Identity.Client;
 
 namespace L3AQTN_HFT_202231.Test
 {
@@ -15,6 +16,8 @@ namespace L3AQTN_HFT_202231.Test
     {
         BusLogic logic;
         Mock<IRepository<Bus>> mockBusRepo;
+        Brand bmw;
+        Brand placeholder;
         public BusLogicTests()
         {
         }
@@ -22,12 +25,17 @@ namespace L3AQTN_HFT_202231.Test
         [SetUp]
         public void Init()
         {
+             bmw = new Brand() { Id = 1, Name = "BMW" };
+            placeholder = new Brand() { Id = 2, Name = "PLACE" };
             mockBusRepo = new Mock<IRepository<Bus>>();
             mockBusRepo.Setup(m => m.ReadAll()).Returns(new List<Bus>()
             {
-                
-                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1200,OwnerId=10}
-            }.AsQueryable());
+
+                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=10,Brand=bmw },
+                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=10,Brand=placeholder },
+                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=10,Brand=bmw }
+
+            }.AsQueryable()) ;
             logic=new BusLogic(mockBusRepo.Object);
            
         }
@@ -58,7 +66,37 @@ namespace L3AQTN_HFT_202231.Test
 
             mockBusRepo.Verify(r => r.Create(b), Times.Never);
         }
-       
+        [Test]
+        public void CreateBusWithZeroPrice()
+        {
+            var b = new Bus() {Model="AAA", Price = 0 };
+            try
+            {
+                logic.Create(b);
+            }
+            catch 
+            {
+
+                
+            }
+            mockBusRepo.Verify(r => r.Create(b), Times.Never);
+        }
+
+        [Test]
+        public void AvgPriceByBrandTest()
+        {
+           
+            double? avg = logic.GetAvaragePriceByBrand(bmw);
+            Assert.That(avg, Is.EqualTo(1500));
+        }
+        [Test]
+        public void AvgPriceByModel()
+        {
+
+            double? avg = logic.GetAvaragePriceByModel("MOCK");
+            Assert.That(avg, Is.EqualTo(3000));
+        }
+
     }
 }
 
