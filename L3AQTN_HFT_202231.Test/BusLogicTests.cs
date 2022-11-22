@@ -120,13 +120,18 @@ namespace L3AQTN_HFT_202231.Test
         [Test]
         public void UpdateBus()
         {
-           
-            var u = new Bus() { Model = "Updated", Id = 10 };
             
-            logic.Update(u);
-
-            mockBusRepo.Verify(_ => _.Update(u), Times.Once);
-
+            Bus bus = new Bus()
+            {
+                Model = "Old"
+            };
+            logic.Create(bus);
+            bus.Model = "New";
+            bus.Id = 200;
+            logic.Update(bus);
+            
+            mockBusRepo.Verify(_ => _.Update(bus), Times.Once);
+            
         }
 
     }

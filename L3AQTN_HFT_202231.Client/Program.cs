@@ -12,7 +12,7 @@ namespace L3AQTN_HFT_202231.Client
         {
             BusDbContext context = new BusDbContext();
             var buses = context.Buses.AsQueryable();
-            ;
+           
 
             var b = context.Buses.Where(t => t.Brand.Name.Equals("Citrom"));
 
@@ -26,11 +26,11 @@ namespace L3AQTN_HFT_202231.Client
             repo.Create(c);
 
             var another = repo.Read(1);
-            another.Model = "Mercedes";
-            repo.Update(another);
+            c.Model = "Mercedes";
+            repo.Update(c);
 
             var items = repo.ReadAll().ToArray();
-            
+           
             
         }
     }

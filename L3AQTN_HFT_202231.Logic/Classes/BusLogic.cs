@@ -80,5 +80,7 @@ namespace L3AQTN_HFT_202231.Logic
                 .Where(x => x.Model == model)
                 .Max(x => x.Price);
         }
+
+        
     }
 }
