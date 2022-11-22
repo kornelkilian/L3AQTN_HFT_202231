@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace L3AQTN_HFT_202231.Logic
 {
-    internal class BusLogic : IBusLogic
+    public class BusLogic : IBusLogic
     {
         IRepository<Bus> repo;
 
