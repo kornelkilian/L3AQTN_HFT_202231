@@ -97,6 +97,30 @@ namespace L3AQTN_HFT_202231.Test
             Assert.That(avg, Is.EqualTo(3000));
         }
 
+        [Test]
+        public void DeleteBusTest()
+        {
+            var b = new Bus() { Model = "GOLF", Id = 15 };
+
+            logic.Create(b);
+
+            logic.Delete(15);
+
+            mockBusRepo.Verify(_ => _.Delete(15), Times.Once);
+        }
+
+        [Test]
+        public void UpdateBus()
+        {
+           
+            var u = new Bus() { Model = "Updated", Id = 10 };
+            
+            logic.Update(u);
+
+            mockBusRepo.Verify(_ => _.Update(u), Times.Once);
+
+        }
+
     }
 }
 
