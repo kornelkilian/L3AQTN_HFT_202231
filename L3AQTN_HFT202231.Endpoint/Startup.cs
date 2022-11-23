@@ -1,3 +1,7 @@
+using L3AQTN_HFT_202231.Logic;
+using L3AQTN_HFT_202231.Models;
+using L3AQTN_HFT_202231.Repo;
+using L3AQTN_HFT_202231.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +29,16 @@ namespace L3AQTN_HFT202231.Endpoint
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<BusDbContext>();
+
+            services.AddTransient<IRepository<Bus>, BusRepository>();
+            services.AddTransient<IRepository<Brand>,BrandRepository>();
+            services.AddTransient<IRepository<Owner>, OwnerRepository>();
+
+            services.AddTransient<IBusLogic, BusLogic>();
+            services.AddTransient<IBrandLogic, BrandLogic>();
+            services.AddTransient<IOwnerLogic, OwnerLogic>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

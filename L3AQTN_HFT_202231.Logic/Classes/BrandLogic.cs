@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace L3AQTN_HFT_202231.Logic
 {
-    internal class BrandLogic : IBrandLogic
+    public class BrandLogic : IBrandLogic
     {
         IRepository<Brand> repo;
 

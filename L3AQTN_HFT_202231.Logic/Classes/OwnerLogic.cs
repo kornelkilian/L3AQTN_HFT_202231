@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace L3AQTN_HFT_202231.Logic
 {
-    internal class OwnerLogic : IOwnerLogic
+    public class OwnerLogic : IOwnerLogic
     {
         IRepository<Owner> repo;
 

@@ -3,50 +3,53 @@ using L3AQTN_HFT_202231.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace L3AQTN_HFT202231.Endpoint.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class BusController : ControllerBase
+    public class BrandController : ControllerBase
     {
-        IBusLogic logic;
+        IBrandLogic logic;
 
-        public BusController(IBusLogic logic)
+        public BrandController(IBrandLogic logic)
         {
             this.logic = logic;
         }
 
 
 
-        // GET: api/<BusController>
+
+        // GET: api/<OwnerController>
         [HttpGet]
-        public IEnumerable<Bus> ReadAll()
+        public IEnumerable<Brand> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
-        // GET api/<BusController>/5
+        // GET api/<OwnerController>/5
         [HttpGet("{id}")]
-        public Bus Read(int id)
+        public Brand Read(int id)
         {
             return logic.Read(id);
         }
 
-        // POST api/<BusController>
+        // POST api/<OwnerController>
         [HttpPost]
-        public void Create([FromBody] Bus value)
+        public void Create([FromBody] Brand value)
         {
             this.logic.Create(value);
         }
 
-        // PUT api/<BusController>/5
+        // PUT api/<OwnerController>/5
         [HttpPut("{id}")]
-        public void Update([FromBody] Bus value)
+        public void Update([FromBody] Brand value)
         {
             this.logic.Update(value);
         }
 
-        // DELETE api/<BusController>/5
+        // DELETE api/<OwnerController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
