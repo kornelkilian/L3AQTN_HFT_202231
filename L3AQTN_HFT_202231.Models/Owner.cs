@@ -23,6 +23,13 @@ namespace L3AQTN_HFT_202231.Models
         [NotMapped]
         public virtual ICollection<Bus> Buses { get; set; }
 
+        public Owner()
+        {
+            Buses = new HashSet<Bus>();
+        }
+
+        public bool? HasMustache { get; set; }
+
         public void CopyFrom(Owner owner)
         {
             this.Id = owner.Id;

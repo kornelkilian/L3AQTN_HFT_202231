@@ -13,10 +13,14 @@ namespace L3AQTN_HFT_202231.Logic
     public class BusLogic : IBusLogic
     {
         IRepository<Bus> repo;
+        IRepository<Owner> ownerRepo;
+        IRepository<Brand> brandRepo;
 
-        public BusLogic(IRepository<Bus> repo)
+        public BusLogic(IRepository<Bus> repo, IRepository<Owner> ownerRepo, IRepository<Brand> brandRepo)
         {
             this.repo = repo;
+            this.ownerRepo = ownerRepo;
+            this.brandRepo = brandRepo;
         }
 
         public void Create(Bus item)
@@ -66,28 +70,94 @@ namespace L3AQTN_HFT_202231.Logic
                 .Where(x => x.BrandId == brand.Id)
                 .Average(x => x.Price);
         }
+        //Buszok száma tulajonként, márka szerint
+        public IEnumerable<OwnerBrandInfo> GetBusCountByOwner()
+        {
+            var owners = ownerRepo.ReadAll();
 
-       
+            List<OwnerBrandInfo> list = new List<OwnerBrandInfo>();
+
+            foreach (var owner in owners)
+            {
+                OwnerBrandInfo info = new OwnerBrandInfo()
+                {
+                    OwnerName = owner.Name
+                };
+
+                info.Brands = (from x in owner.Buses
+                               group x by x.Brand into g
+                               select new BrandCount
+                               {
+                                   Name = g.Key.Name,
+                                   Count = g.Key.Buses.Count()
+
+                               }) ;
+                list.Add(info);
+                  
+            }
+            return list;
+        }
+
+        public IEnumerable<OwnerBrandInfo> GetBusCountByMustache()
+        {
+            var owners = ownerRepo.ReadAll();
+
+            List<OwnerBrandInfo> list = new List<OwnerBrandInfo>();
+
+            foreach (var owner in owners)
+            {
+                if ((bool)(owner.HasMustache))
+                {
+                    OwnerBrandInfo info = new OwnerBrandInfo()
+                    {
+                        OwnerName = owner.Name
+                    };
+
+                    info.Brands = (from x in owner.Buses
+                                   group x by x.Brand into g
+                                   select new BrandCount
+                                   {
+                                       Name = g.Key.Name,
+                                       Count = g.Key.Buses.Count()
+
+                                   });
+                    list.Add(info);
+                }
+               
+
+            }
+            return list;
+        }
 
         public double? GetAvaragePriceByModel(string model)
         {
-            
-            
-
             return this.repo
                 .ReadAll()
                 .Where(x => x.Model == model)
                 .Average(x => x.Price);
         }
 
-        public double? HighestPriceByModel(string model)
+        public double? HighestPriceByBrand(string brandname)
         {
             return this.repo
                 .ReadAll()
-                .Where(x => x.Model == model)
+                .Where(x =>x.Brand.Name ==brandname)
                 .Max(x => x.Price);
         }
 
         
+    }
+
+    public class OwnerBrandInfo
+    {
+        public string OwnerName { get; set; }
+        public IEnumerable<BrandCount> Brands { get; set; }
+
+        
+    }
+    public class BrandCount
+    {
+        public string Name { get; set; }
+        public int Count { get; set; }
     }
 }

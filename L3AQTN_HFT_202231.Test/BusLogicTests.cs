@@ -16,8 +16,11 @@ namespace L3AQTN_HFT_202231.Test
     {
         BusLogic logic;
         Mock<IRepository<Bus>> mockBusRepo;
+        Mock<IRepository<Brand>> mockBrandRepo;
+        Mock<IRepository<Owner>> mockOwnerRepo;
+
         Brand bmw;
-        Brand placeholder;
+        
         public BusLogicTests()
         {
         }
@@ -26,17 +29,36 @@ namespace L3AQTN_HFT_202231.Test
         public void Init()
         {
              bmw = new Brand() { Id = 1, Name = "BMW" };
-            placeholder = new Brand() { Id = 2, Name = "PLACE" };
+           // placeholder = new Brand() { Id = 2, Name = "PLACE" };
             mockBusRepo = new Mock<IRepository<Bus>>();
             mockBusRepo.Setup(m => m.ReadAll()).Returns(new List<Bus>()
             {
 
-                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=10},
-                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=10 },
-                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=10}
+                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=1},
+                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=1 },
+                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=2}
 
             }.AsQueryable()) ;
-            logic=new BusLogic(mockBusRepo.Object);
+
+            mockOwnerRepo = new Mock<IRepository<Owner>>();
+            mockOwnerRepo.Setup(m => m.ReadAll()).Returns(new List<Owner>()
+            {
+
+                new Owner(){Id=1,Name="Gyula",ZIPCode=1111,HasMustache=true},
+                new Owner(){Id=2,Name="Feri",ZIPCode=1212,HasMustache=true}
+
+
+            }.AsQueryable());
+
+            mockBrandRepo = new Mock<IRepository<Brand>>();
+            mockBrandRepo.Setup(m => m.ReadAll()).Returns(new List<Brand>()
+            {
+                new Brand(){Name="BMW",Id=1,Country="GER"},
+                new Brand(){Name="Mercedes",Id=2,Country="GER"}
+
+
+            }.AsQueryable());
+            logic =new BusLogic(mockBusRepo.Object,mockOwnerRepo.Object,mockBrandRepo.Object);
            
         }
 
@@ -98,9 +120,10 @@ namespace L3AQTN_HFT_202231.Test
         }
 
         [Test]
-        public void HighestPriceByModel()
+        public void HighestPriceByBrand()
         {
-            double? h = logic.HighestPriceByModel("MOCK");
+            
+            double? h = logic.HighestPriceByBrand("Mercedes");
             Assert.That(h, Is.EqualTo(5000));
         }
 
@@ -134,6 +157,30 @@ namespace L3AQTN_HFT_202231.Test
             
         }
 
+        [Test]
+        public void GetBusCountByOwner()
+        {
+            var b = logic.GetBusCountByOwner();
+
+            var c=b.AsEnumerable().ToArray();
+
+            var d = c.First().OwnerName;
+            var n = c.First().Brands;
+            Assert.That(c.First().OwnerName=="Gyula");
+
+            
+
+        }
+
+        [Test]
+        public void GetBusCountByMustache()
+        {
+            var b=logic.GetBusCountByMustache();
+
+            var c = b.Count();
+
+            Assert.That(c == 2);
+        }
     }
 }
 

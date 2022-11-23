@@ -36,6 +36,8 @@ namespace L3AQTN_HFT_202231.Models
         [NotMapped]
         public virtual Owner Owner { get; set; }
 
+     
+
         public void CopyFrom(Bus bus)
 		{
 			this.Model = bus.Model;

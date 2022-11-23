@@ -41,8 +41,8 @@ namespace L3AQTN_HFT_202231.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var owner = new Owner() { Id = 1, Name = "Gyula",ZIPCode=1111 };
-            var owner2 = new Owner() { Id = 2, Name = "Tibor",ZIPCode=1212 };
+            var owner = new Owner() { Id = 1, Name = "Gyula",ZIPCode=1111,HasMustache=true };
+            var owner2 = new Owner() { Id = 2, Name = "Tibor",ZIPCode=1212 ,HasMustache=false};
             var brand = new Brand() { Id = 1, Name = "Mercedes" };
             var brand2 = new Brand() { Id = 2, Name = "BMW" };
             var bus = new Bus() { Id = 1, BrandId = 1, Model = "C4",OwnerId=1, Price = 1000 };
@@ -61,23 +61,12 @@ namespace L3AQTN_HFT_202231.Repository
                           .HasForeignKey( bus=> bus.OwnerId)
                           .OnDelete(DeleteBehavior.ClientSetNull));
 
-            modelBuilder.Entity<Brand>(entity =>
-                        entity.HasMany(brand => brand.Buses)
-                        .WithOne(x=>x.Brand)
-                        .HasForeignKey(x => x.BrandId)
-                        .OnDelete(DeleteBehavior.ClientSetNull));
-
-            modelBuilder.Entity<Owner>(entity =>
-              entity.HasMany(o => o.Buses)
-              .WithOne(bus => bus.Owner)
-              .HasForeignKey(a => a.OwnerId)
-              .OnDelete(DeleteBehavior.ClientSetNull));
 
 
-
+            modelBuilder.Entity<Owner>().HasData(owner, owner2);
             modelBuilder.Entity<Brand>().HasData(brand,brand2);
-            modelBuilder.Entity<Bus>().HasData(bus, bus2,bus3);
-            modelBuilder.Entity<Owner>().HasData(owner,owner2);
+            modelBuilder.Entity<Bus>().HasData(bus,bus2,bus3);
+           
         }
 
        

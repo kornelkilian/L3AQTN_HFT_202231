@@ -30,7 +30,8 @@ namespace L3AQTN_HFT_202231.Client
             repo.Update(c);
 
             var items = repo.ReadAll().ToArray();
-            ;
+            
+        
             
         }
     }
