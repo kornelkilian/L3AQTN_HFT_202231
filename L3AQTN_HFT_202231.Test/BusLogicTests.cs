@@ -31,9 +31,9 @@ namespace L3AQTN_HFT_202231.Test
             mockBusRepo.Setup(m => m.ReadAll()).Returns(new List<Bus>()
             {
 
-                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=10,Brand=bmw },
-                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=10,Brand=placeholder },
-                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=10,Brand=bmw }
+                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=10},
+                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=10 },
+                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=10}
 
             }.AsQueryable()) ;
             logic=new BusLogic(mockBusRepo.Object);
@@ -127,7 +127,7 @@ namespace L3AQTN_HFT_202231.Test
             };
             logic.Create(bus);
             bus.Model = "New";
-            bus.Id = 200;
+            
             logic.Update(bus);
             
             mockBusRepo.Verify(_ => _.Update(bus), Times.Once);

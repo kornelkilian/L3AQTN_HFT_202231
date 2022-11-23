@@ -33,16 +33,16 @@ namespace L3AQTN_HFT_202231.Repository
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
+                     .UseLazyLoadingProxies()
                      .UseInMemoryDatabase("BusDB")
-                    .UseLazyLoadingProxies();
                     ;
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var owner = new Owner() { Id = 1, Name = "Gyula" };
-            var owner2 = new Owner() { Id = 2, Name = "Tibor" };
+            var owner = new Owner() { Id = 1, Name = "Gyula",ZIPCode=1111 };
+            var owner2 = new Owner() { Id = 2, Name = "Tibor",ZIPCode=1212 };
             var brand = new Brand() { Id = 1, Name = "Mercedes" };
             var brand2 = new Brand() { Id = 2, Name = "BMW" };
             var bus = new Bus() { Id = 1, BrandId = 1, Model = "C4",OwnerId=1, Price = 1000 };
@@ -53,12 +53,27 @@ namespace L3AQTN_HFT_202231.Repository
                             entity.HasOne(bus => bus.Brand)
                             .WithMany(brand => brand.Buses)
                             .HasForeignKey(bus => bus.BrandId)
-                            .HasForeignKey(bus=>bus.OwnerId)
                             .OnDelete(DeleteBehavior.ClientSetNull));
 
-            
+            modelBuilder.Entity<Bus>(entity =>
+                          entity.HasOne(bus => bus.Owner)
+                          .WithMany(owner => owner.Buses)
+                          .HasForeignKey( bus=> bus.OwnerId)
+                          .OnDelete(DeleteBehavior.ClientSetNull));
 
-            
+            modelBuilder.Entity<Brand>(entity =>
+                        entity.HasMany(brand => brand.Buses)
+                        .WithOne(x=>x.Brand)
+                        .HasForeignKey(x => x.BrandId)
+                        .OnDelete(DeleteBehavior.ClientSetNull));
+
+            modelBuilder.Entity<Owner>(entity =>
+              entity.HasMany(o => o.Buses)
+              .WithOne(bus => bus.Owner)
+              .HasForeignKey(a => a.OwnerId)
+              .OnDelete(DeleteBehavior.ClientSetNull));
+
+
 
             modelBuilder.Entity<Brand>().HasData(brand,brand2);
             modelBuilder.Entity<Bus>().HasData(bus, bus2,bus3);

@@ -1,7 +1,9 @@
 ﻿using L3AQTN_HFT_202231.Models;
 using L3AQTN_HFT_202231.Repo;
+using L3AQTN_HFT_202231.Repository;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,12 +63,17 @@ namespace L3AQTN_HFT_202231.Logic
         {
             return this.repo
                 .ReadAll()
-                .Where(x => x.Brand == brand)
+                .Where(x => x.BrandId == brand.Id)
                 .Average(x => x.Price);
         }
 
+       
+
         public double? GetAvaragePriceByModel(string model)
         {
+            
+            
+
             return this.repo
                 .ReadAll()
                 .Where(x => x.Model == model)

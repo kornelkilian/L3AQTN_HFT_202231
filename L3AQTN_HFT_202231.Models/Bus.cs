@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace L3AQTN_HFT_202231.Models
 {
 
-	[Table("cars")]
+	[Table("buses")]
 	public class Bus : IDbEntity
 	{
 
@@ -26,18 +26,19 @@ namespace L3AQTN_HFT_202231.Models
         [MaxLength(255)]
         [Required]
         public string Model { get; set; }
-        [NotMapped]
 
+        [NotMapped]
         public virtual  Brand Brand { get; set; }
         public int BrandId { get; set; }
         public int? Price { get; set; }
 
         public int OwnerId { get; set; }
+        [NotMapped]
+        public virtual Owner Owner { get; set; }
 
         public void CopyFrom(Bus bus)
 		{
 			this.Model = bus.Model;
-			this.Brand = bus.Brand;
 			this.BrandId = bus.BrandId;
 			this.Price = bus.Price;
             this.OwnerId = bus.OwnerId;

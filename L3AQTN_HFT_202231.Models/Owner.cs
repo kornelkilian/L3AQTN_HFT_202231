@@ -20,6 +20,8 @@ namespace L3AQTN_HFT_202231.Models
         [MaxLength(4)]
         [Required]
         public int ZIPCode { get; set; }
+        [NotMapped]
+        public virtual ICollection<Bus> Buses { get; set; }
 
         public void CopyFrom(Owner owner)
         {

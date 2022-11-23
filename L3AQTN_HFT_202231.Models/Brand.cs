@@ -25,6 +25,9 @@ namespace L3AQTN_HFT_202231.Models
         [Required]
         public string Name { get; set; }
 
+        public string Country { get; set; }
+
+
         [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Bus> Buses { get; set; }
@@ -38,6 +41,7 @@ namespace L3AQTN_HFT_202231.Models
         {
            
             this.Name = other.Name;
+            this.Country = other.Country;
             this.Buses = other.Buses.Select(k => new Bus(k)).ToHashSet();
         }
 
