@@ -43,7 +43,7 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
         }
 
         // PUT api/<OwnerController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
         public void Update([FromBody] Brand value)
         {
             this.logic.Update(value);

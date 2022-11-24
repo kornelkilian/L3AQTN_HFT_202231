@@ -28,7 +28,11 @@ namespace L3AQTN_HFT_202231.Repository
             var sourceItem = Read(owner.Id);
             foreach (var prop in sourceItem.GetType().GetProperties())
             {
-                prop.SetValue(sourceItem, prop.GetValue(owner));
+                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
+                {
+                    prop.SetValue(sourceItem, prop.GetValue(owner));
+                }
+
             }
 
             context.SaveChanges();

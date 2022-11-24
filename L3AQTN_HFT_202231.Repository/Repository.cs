@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace L3AQTN_HFT_202231.Repository
 {
-    public abstract class Repository<T> : IRepository<T> where T : class, IDbEntity
+    public abstract class Repository<T> : IRepository<T> where T : class
     {
         private readonly BusDbContext context;
 

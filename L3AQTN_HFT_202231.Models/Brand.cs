@@ -13,7 +13,7 @@ namespace L3AQTN_HFT_202231.Models
 {
 
 	[Table("brands")]
-	public class Brand : IDbEntity
+	public class Brand 
 	{
 		
 
@@ -21,7 +21,7 @@ namespace L3AQTN_HFT_202231.Models
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 
-        [MaxLength(100)]
+        [StringLength(100)]
         [Required]
         public string Name { get; set; }
 

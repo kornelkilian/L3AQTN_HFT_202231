@@ -10,15 +10,17 @@ using System.Threading.Tasks;
 namespace L3AQTN_HFT_202231.Models
 {
 	[Table("owners")]
-	public class Owner:IDbEntity
+	public class Owner
 	{
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int Id { get; set; }
         [MaxLength(255)]
         [Required]
         public string Name { get; set; }
-        [MaxLength(4)]
+        
+
         [Required]
         public int ZIPCode { get; set; }
         [JsonIgnore]

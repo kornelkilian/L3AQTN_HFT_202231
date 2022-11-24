@@ -4,7 +4,7 @@ using System.Security.Principal;
 
 namespace L3AQTN_HFT_202231.Repo
 {
-    public interface IRepository<T> where T : class, IDbEntity
+    public interface IRepository<T> where T : class
     {
         void Create(T entity);
         void Delete(int i);

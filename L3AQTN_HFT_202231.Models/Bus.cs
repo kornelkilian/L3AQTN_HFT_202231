@@ -10,7 +10,7 @@ namespace L3AQTN_HFT_202231.Models
 {
 
 	[Table("buses")]
-	public class Bus : IDbEntity
+	public class Bus 
 	{
 
 		public Bus() { }
