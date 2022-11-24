@@ -13,7 +13,6 @@ namespace L3AQTN_HFT_202231.Models
 	public class Bus : IDbEntity
 	{
 
-
 		public Bus() { }
 
 		public Bus(Bus bus)
@@ -35,8 +34,6 @@ namespace L3AQTN_HFT_202231.Models
         public int OwnerId { get; set; }
         [NotMapped]
         public virtual Owner Owner { get; set; }
-
-     
 
         public void CopyFrom(Bus bus)
 		{

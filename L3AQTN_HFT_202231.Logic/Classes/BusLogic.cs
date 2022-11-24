@@ -63,11 +63,11 @@ namespace L3AQTN_HFT_202231.Logic
 
         //non crud
 
-        public double? GetAvaragePriceByBrand(Brand brand)
+        public double? GetAvaragePriceByBrandCountry(string country)
         {
             return this.repo
                 .ReadAll()
-                .Where(x => x.BrandId == brand.Id)
+                .Where(x => x.Brand.Country==country)
                 .Average(x => x.Price);
         }
         //Buszok száma tulajonként, márka szerint
@@ -96,6 +96,11 @@ namespace L3AQTN_HFT_202231.Logic
                   
             }
             return list;
+        }
+
+        public List<Bus> BusesByZIPCode(int zip)
+        {
+            return this.repo.ReadAll().Where(bus=>bus.Owner.ZIPCode==zip).ToList();
         }
 
         public IEnumerable<OwnerBrandInfo> GetBusCountByMustache()
@@ -129,11 +134,12 @@ namespace L3AQTN_HFT_202231.Logic
             return list;
         }
 
-        public double? GetAvaragePriceByModel(string model)
+        public double? GetAvaragePriceByOwner(string ownername)
         {
+            
             return this.repo
                 .ReadAll()
-                .Where(x => x.Model == model)
+                .Where(x => x.Owner.Name==ownername)
                 .Average(x => x.Price);
         }
 
@@ -145,6 +151,14 @@ namespace L3AQTN_HFT_202231.Logic
                 .Max(x => x.Price);
         }
 
+        public List<Bus> BusesWithMustacheOwners()
+        {
+            return this.repo.ReadAll().Where(bus => bus.Owner.HasMustache == true).ToList();
+            
+
+        }
+       
+
         
     }
 
@@ -155,6 +169,9 @@ namespace L3AQTN_HFT_202231.Logic
 
         
     }
+
+
+
     public class BrandCount
     {
         public string Name { get; set; }

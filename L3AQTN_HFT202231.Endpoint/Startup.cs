@@ -64,7 +64,7 @@ namespace L3AQTN_HFT202231.Endpoint
                 var exception = context.Features
                 .Get<IExceptionHandlerPathFeature>()
                 .Error;
-                var response=new {error=exception.Message};
+                var response=new {Msg=exception.Message};
                 await context.Response.WriteAsJsonAsync(response);
             }));
 

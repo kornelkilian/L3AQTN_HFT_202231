@@ -43,8 +43,8 @@ namespace L3AQTN_HFT_202231.Repository
         {
             var owner = new Owner() { Id = 1, Name = "Gyula",ZIPCode=1111,HasMustache=true };
             var owner2 = new Owner() { Id = 2, Name = "Tibor",ZIPCode=1212 ,HasMustache=false};
-            var brand = new Brand() { Id = 1, Name = "Mercedes" };
-            var brand2 = new Brand() { Id = 2, Name = "BMW" };
+            var brand = new Brand() { Id = 1, Name = "Mercedes" ,Country="GER"};
+            var brand2 = new Brand() { Id = 2, Name = "BMW",Country="GER" };
             var bus = new Bus() { Id = 1, BrandId = 1, Model = "C4",OwnerId=1, Price = 1000 };
             var bus2 = new Bus() { Id = 2, BrandId = 1, Model = "C5",OwnerId=1, Price = 1200 };
             var bus3 = new Bus() { Id = 3, BrandId = 2, Model = "A2", OwnerId =2, Price = 2500 };

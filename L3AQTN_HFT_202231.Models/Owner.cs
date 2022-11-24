@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace L3AQTN_HFT_202231.Models
@@ -20,6 +21,7 @@ namespace L3AQTN_HFT_202231.Models
         [MaxLength(4)]
         [Required]
         public int ZIPCode { get; set; }
+        [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Bus> Buses { get; set; }
 

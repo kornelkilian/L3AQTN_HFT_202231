@@ -7,6 +7,7 @@ using Moq;
 using NUnit.Framework;
 using System.Linq;
 using Microsoft.Identity.Client;
+using L3AQTN_HFT_202231.Repository;
 
 namespace L3AQTN_HFT_202231.Test
 {
@@ -18,6 +19,9 @@ namespace L3AQTN_HFT_202231.Test
         Mock<IRepository<Bus>> mockBusRepo;
         Mock<IRepository<Brand>> mockBrandRepo;
         Mock<IRepository<Owner>> mockOwnerRepo;
+
+     
+
 
         Brand bmw;
         
@@ -71,6 +75,8 @@ namespace L3AQTN_HFT_202231.Test
 
             mockBusRepo.Verify(_ => _.Create(b), Times.Once);
         }
+
+        //CREATE TESTS
         [Test]
         public void CreateBusWithIncorrectModel()
         {
@@ -104,30 +110,7 @@ namespace L3AQTN_HFT_202231.Test
             mockBusRepo.Verify(r => r.Create(b), Times.Never);
         }
 
-        [Test]
-        public void AvgPriceByBrandTest()
-        {
-           
-            double? avg = logic.GetAvaragePriceByBrand(bmw);
-            Assert.That(avg, Is.EqualTo(1500));
-        }
-        [Test]
-        public void AvgPriceByModel()
-        {
-
-            double? avg = logic.GetAvaragePriceByModel("MOCK");
-            Assert.That(avg, Is.EqualTo(3000));
-        }
-
-        [Test]
-        public void HighestPriceByBrand()
-        {
-            
-            double? h = logic.HighestPriceByBrand("Mercedes");
-            Assert.That(h, Is.EqualTo(5000));
-        }
-
-
+        //OTHER TESTS
         [Test]
         public void DeleteBusTest()
         {
@@ -143,33 +126,71 @@ namespace L3AQTN_HFT_202231.Test
         [Test]
         public void UpdateBus()
         {
-            
+
             Bus bus = new Bus()
             {
                 Model = "Old"
             };
             logic.Create(bus);
             bus.Model = "New";
-            
+
             logic.Update(bus);
-            
+
             mockBusRepo.Verify(_ => _.Update(bus), Times.Once);
-            
+
+        }
+
+        //NON-CRUD TESTS
+
+        [Test]
+        public void AvgPriceByBrandCountry()
+        {
+            var c = new BusDbContext();
+
+            IRepository<Bus> repo = new BusRepository(c);
+            IRepository<Brand> brandRepo = new BrandRepository(c);
+            IRepository<Owner> ownerRepo = new OwnerRepository(c);
+
+
+            var logc = new BusLogic(repo, ownerRepo, brandRepo);
+
+            double? avg = logc.GetAvaragePriceByBrandCountry("GER");
+            Assert.That(avg, Is.EqualTo((double)4700/3));
+        }
+        [Test]
+        public void AvgPriceByOwner()
+        {
+            //LazyLoading nem működött a Mockkal, ezért a DbContext adataival faket csináltam.
+            var c = new BusDbContext();
+
+            IRepository<Bus> repo = new BusRepository(c);
+            IRepository<Brand> brandRepo = new BrandRepository(c);
+            IRepository<Owner> ownerRepo = new OwnerRepository(c);
+
+
+            var logc = new BusLogic(repo, ownerRepo, brandRepo);
+
+           
+
+            double? avg = logc.GetAvaragePriceByOwner("Gyula");
+            Assert.That(avg, Is.EqualTo(1100));
         }
 
         [Test]
-        public void GetBusCountByOwner()
+        public void HighestPriceByBrand()
         {
-            var b = logic.GetBusCountByOwner();
+            //LazyLoading nem működött a Mockkal
+            var c = new BusDbContext();
 
-            var c=b.AsEnumerable().ToArray();
+            IRepository<Bus> repo = new BusRepository(c);
+            IRepository<Brand> brandRepo = new BrandRepository(c);
+            IRepository<Owner> ownerRepo = new OwnerRepository(c);
 
-            var d = c.First().OwnerName;
-            var n = c.First().Brands;
-            Assert.That(c.First().OwnerName=="Gyula");
 
+            var logc = new BusLogic(repo, ownerRepo, brandRepo);
             
-
+            double? h = logc.HighestPriceByBrand("Mercedes");
+            Assert.That(h, Is.EqualTo(1200));
         }
 
         [Test]
@@ -180,6 +201,56 @@ namespace L3AQTN_HFT_202231.Test
             var c = b.Count();
 
             Assert.That(c == 2);
+        }
+        [Test]
+        public void BusesByZipCode()
+        {
+            var c = new BusDbContext();
+
+            IRepository<Bus> repo = new BusRepository(c);
+            IRepository<Brand> brandRepo = new BrandRepository(c);
+            IRepository<Owner> ownerRepo = new OwnerRepository(c);
+
+
+            var logc = new BusLogic(repo, ownerRepo, brandRepo);
+
+            var a = logc.BusesByZIPCode(1111);
+            bool helper = true;
+            foreach (Bus bus in a)
+            {
+                if (bus.Owner.ZIPCode!=1111)
+                {
+                    helper = false;
+                }
+
+            }
+            Assert.That(helper == true);
+        }
+
+        [Test]
+        public void BusesWithMustacheOwners()
+        {
+            var c = new BusDbContext();
+
+            IRepository<Bus> repo = new BusRepository(c);
+            IRepository<Brand> brandRepo = new BrandRepository(c);
+            IRepository<Owner> ownerRepo = new OwnerRepository(c);
+
+
+            var logc = new BusLogic(repo, ownerRepo, brandRepo);
+
+            var result = logc.BusesWithMustacheOwners();
+            bool helper = true;
+            foreach (Bus bus in result)
+            {
+                if (bus.Owner.HasMustache==false)
+                {
+                    helper = false;
+                }
+            }
+
+            Assert.That(helper==true);
+
         }
     }
 }
