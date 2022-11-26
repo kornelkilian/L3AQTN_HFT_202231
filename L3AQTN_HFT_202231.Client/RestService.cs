@@ -144,6 +144,25 @@ namespace L3AQTN_HFT_202231.Client
             response.EnsureSuccessStatusCode();
         }
 
+        //NON CRUDS
+
+        public T GetNonCrud<T>(string endpoint,string method)
+        {
+            T item = default(T);
+            HttpResponseMessage response = client.GetAsync(endpoint + "/" +method.ToString()).GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+            {
+                item = response.Content.ReadAsAsync<T>().GetAwaiter().GetResult();
+            }
+            else
+            {
+                var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
+                throw new ArgumentException(error.Msg);
+            }
+            return item;
+        }
+
+
     }
     public class RestExceptionInfo
     {

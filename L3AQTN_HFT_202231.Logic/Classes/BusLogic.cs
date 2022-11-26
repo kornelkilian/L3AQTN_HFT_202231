@@ -29,7 +29,7 @@ namespace L3AQTN_HFT_202231.Logic
             {
                 throw new ArgumentException("Hibás modell név.");
             }
-            if (item.Price==0)
+            if (item.Price == 0)
             {
                 throw new ArgumentException("Busz ára nem lehet nulla");
             }
@@ -67,7 +67,7 @@ namespace L3AQTN_HFT_202231.Logic
         {
             return this.repo
                 .ReadAll()
-                .Where(x => x.Brand.Country==country)
+                .Where(x => x.Brand.Country == country)
                 .Average(x => x.Price);
         }
         //Buszok száma tulajonként, márka szerint
@@ -91,16 +91,16 @@ namespace L3AQTN_HFT_202231.Logic
                                    Name = g.Key.Name,
                                    Count = g.Key.Buses.Count()
 
-                               }) ;
+                               });
                 list.Add(info);
-                  
+
             }
             return list;
         }
 
         public List<Bus> BusesByZIPCode(int zip)
         {
-            return this.repo.ReadAll().Where(bus=>bus.Owner.ZIPCode==zip).ToList();
+            return this.repo.ReadAll().Where(bus => bus.Owner.ZIPCode == zip).ToList();
         }
 
         public IEnumerable<OwnerBrandInfo> GetBusCountByMustache()
@@ -128,7 +128,7 @@ namespace L3AQTN_HFT_202231.Logic
                                    });
                     list.Add(info);
                 }
-               
+
 
             }
             return list;
@@ -136,10 +136,10 @@ namespace L3AQTN_HFT_202231.Logic
 
         public double? GetAvaragePriceByOwner(string ownername)
         {
-            
+
             return this.repo
                 .ReadAll()
-                .Where(x => x.Owner.Name==ownername)
+                .Where(x => x.Owner.Name == ownername)
                 .Average(x => x.Price);
         }
 
@@ -147,19 +147,19 @@ namespace L3AQTN_HFT_202231.Logic
         {
             return this.repo
                 .ReadAll()
-                .Where(x =>x.Brand.Name ==brandname)
+                .Where(x => x.Brand.Name == brandname)
                 .Max(x => x.Price);
         }
 
         public List<Bus> BusesWithMustacheOwners()
         {
             return this.repo.ReadAll().Where(bus => bus.Owner.HasMustache == true).ToList();
-            
+
 
         }
-       
 
-        
+
+
     }
 
     public class OwnerBrandInfo
