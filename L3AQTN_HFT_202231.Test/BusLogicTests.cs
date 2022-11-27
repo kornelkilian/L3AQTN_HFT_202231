@@ -20,11 +20,6 @@ namespace L3AQTN_HFT_202231.Test
         Mock<IRepository<Brand>> mockBrandRepo;
         Mock<IRepository<Owner>> mockOwnerRepo;
 
-     
-
-
-        Brand bmw;
-        
         public BusLogicTests()
         {
         }
@@ -32,36 +27,65 @@ namespace L3AQTN_HFT_202231.Test
         [SetUp]
         public void Init()
         {
-             bmw = new Brand() { Id = 1, Name = "BMW" };
-           // placeholder = new Brand() { Id = 2, Name = "PLACE" };
+            var brands = new List<Brand>()
+            {
+                new Brand {Id=1, Name="BMW",Country="GER"},
+                new Brand {Id=2,Name="Mercedes",Country="GER"}
+            }.AsQueryable();
+
+            var owners = new List<Owner>()
+            {
+                 new Owner(){Id=1,Name="Gyula",ZIPCode=1111,HasMustache=true},
+                new Owner(){Id=2,Name="Feri",ZIPCode=1212,HasMustache=true},
+            }.AsQueryable();
+
+            var buses1 = new List<Bus>()
+            {
+                new Bus(){Id=1,BrandId=1,Model="MOCK0",Price=1000,OwnerId=1,Brand=brands.First(),Owner=owners.First()},
+                new Bus(){Id=3,BrandId=1,Model="MOCK1",Price=5000,OwnerId=1,Brand=brands.First(),Owner=owners.First() },
+               
+
+
+            }.AsQueryable();
+
+            var buses2 = new List<Bus>()
+            {
+                new Bus(){Id=4,BrandId=2,Model="MOCK2",Price=2000,OwnerId=2,Brand=brands.Last(),Owner=owners.Last()}
+
+
+            }.AsQueryable();
+            buses1.First().Brand = brands.First();
+            buses1.First().Owner = owners.First();
+            foreach (var item in buses1)
+            {
+                brands.First().Buses.Add(item);
+                item.Brand.Equals(brands.First());
+                owners.First().Buses.Add(item);
+                item.Owner.Equals(owners.First());
+            }
+
+            foreach (var item in buses2)
+            {
+                brands.Last().Buses.Add(item);
+                item.Brand.Equals(brands.Last());
+
+                owners.Last().Buses.Add(item);
+                item.Owner.Equals(owners.Last());
+
+
+            }
+          
+
             mockBusRepo = new Mock<IRepository<Bus>>();
-            mockBusRepo.Setup(m => m.ReadAll()).Returns(new List<Bus>()
-            {
-
-                new Bus(){Id=1,BrandId=1,Model="MOCK",Price=1000,OwnerId=1},
-                 new Bus(){Id=3,BrandId=2,Model="MOCK",Price=5000,OwnerId=1 },
-                new Bus(){Id=2,BrandId=1,Model="MOCK2",Price=2000,OwnerId=2}
-
-            }.AsQueryable()) ;
-
-            mockOwnerRepo = new Mock<IRepository<Owner>>();
-            mockOwnerRepo.Setup(m => m.ReadAll()).Returns(new List<Owner>()
-            {
-
-                new Owner(){Id=1,Name="Gyula",ZIPCode=1111,HasMustache=true},
-                new Owner(){Id=2,Name="Feri",ZIPCode=1212,HasMustache=true}
-
-
-            }.AsQueryable());
+            mockBusRepo.Setup(t => t.ReadAll()).Returns(buses1.Concat(buses2));
 
             mockBrandRepo = new Mock<IRepository<Brand>>();
-            mockBrandRepo.Setup(m => m.ReadAll()).Returns(new List<Brand>()
-            {
-                new Brand(){Name="BMW",Id=1,Country="GER"},
-                new Brand(){Name="Mercedes",Id=2,Country="GER"}
+            mockBrandRepo.Setup(t => t.ReadAll()).Returns(brands);
 
+            mockOwnerRepo = new Mock<IRepository<Owner>>();
+            mockOwnerRepo.Setup(t => t.ReadAll()).Returns(owners);
 
-            }.AsQueryable());
+        
             logic =new BusLogic(mockBusRepo.Object,mockOwnerRepo.Object,mockBrandRepo.Object);
            
         }
@@ -145,52 +169,24 @@ namespace L3AQTN_HFT_202231.Test
         [Test]
         public void AvgPriceByBrandCountry()
         {
-            var c = new BusDbContext();
-
-            IRepository<Bus> repo = new BusRepository(c);
-            IRepository<Brand> brandRepo = new BrandRepository(c);
-            IRepository<Owner> ownerRepo = new OwnerRepository(c);
-
-
-            var logc = new BusLogic(repo, ownerRepo, brandRepo);
-
-            double? avg = logc.GetAvaragePriceByBrandCountry("GER");
-            Assert.That(avg, Is.EqualTo((double)4700/3));
+          
+            double? avg = logic.GetAvaragePriceByBrandCountry("GER");
+            Assert.That(avg, Is.EqualTo((double)8000/3));
         }
         [Test]
         public void AvgPriceByOwner()
         {
-            //LazyLoading nem működött a Mockkal, ezért a DbContext adataival faket csináltam.
-            var c = new BusDbContext();
-
-            IRepository<Bus> repo = new BusRepository(c);
-            IRepository<Brand> brandRepo = new BrandRepository(c);
-            IRepository<Owner> ownerRepo = new OwnerRepository(c);
-
-
-            var logc = new BusLogic(repo, ownerRepo, brandRepo);
-
            
-
-            double? avg = logc.GetAvaragePriceByOwner("Gyula");
-            Assert.That(avg, Is.EqualTo(1100));
+            double? avg = logic.GetAvaragePriceByOwner("Gyula");
+            Assert.That(avg, Is.EqualTo(3000));
         }
 
         [Test]
         public void HighestPriceByBrand()
         {
-            //LazyLoading nem működött a Mockkal
-            var c = new BusDbContext();
-
-            IRepository<Bus> repo = new BusRepository(c);
-            IRepository<Brand> brandRepo = new BrandRepository(c);
-            IRepository<Owner> ownerRepo = new OwnerRepository(c);
-
-
-            var logc = new BusLogic(repo, ownerRepo, brandRepo);
-            
-            double? h = logc.HighestPriceByBrand("Mercedes");
-            Assert.That(h, Is.EqualTo(1200));
+         
+            double? h = logic.HighestPriceByBrand("Mercedes");
+            Assert.That(h, Is.EqualTo(2000));
         }
 
         [Test]
@@ -205,16 +201,8 @@ namespace L3AQTN_HFT_202231.Test
         [Test]
         public void BusesByZipCode()
         {
-            var c = new BusDbContext();
-
-            IRepository<Bus> repo = new BusRepository(c);
-            IRepository<Brand> brandRepo = new BrandRepository(c);
-            IRepository<Owner> ownerRepo = new OwnerRepository(c);
-
-
-            var logc = new BusLogic(repo, ownerRepo, brandRepo);
-
-            var a = logc.BusesByZIPCode(1111);
+           
+            var a = logic.BusesByZIPCode(1111);
             bool helper = true;
             foreach (Bus bus in a)
             {
@@ -230,16 +218,8 @@ namespace L3AQTN_HFT_202231.Test
         [Test]
         public void BusesWithMustacheOwners()
         {
-            var c = new BusDbContext();
-
-            IRepository<Bus> repo = new BusRepository(c);
-            IRepository<Brand> brandRepo = new BrandRepository(c);
-            IRepository<Owner> ownerRepo = new OwnerRepository(c);
-
-
-            var logc = new BusLogic(repo, ownerRepo, brandRepo);
-
-            var result = logc.BusesWithMustacheOwners();
+          
+            var result = logic.BusesWithMustacheOwners();
             bool helper = true;
             foreach (Bus bus in result)
             {
