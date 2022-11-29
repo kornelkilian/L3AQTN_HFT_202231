@@ -6,12 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ConsoleMenu-simple" Version="2.4.3" />
     <PackageReference Include="InMemoryDb" Version="0.6.2" />
     <PackageReference Include="LocalDb" Version="13.9.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="RestService" Version="0.9.81" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\L3AQTN_HFT_202231.Models\L3AQTN_HFT_202231.Models.csproj" />
-    <ProjectReference Include="..\L3AQTN_HFT_202231.Repository\L3AQTN_HFT_202231.Repository.csproj" />
   </ItemGroup>
 </Project>
