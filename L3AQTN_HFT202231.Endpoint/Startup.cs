@@ -2,6 +2,7 @@ using L3AQTN_HFT_202231.Logic;
 using L3AQTN_HFT_202231.Models;
 using L3AQTN_HFT_202231.Repo;
 using L3AQTN_HFT_202231.Repository;
+using L3AQTN_HFT202231.Endpoint.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -41,7 +42,7 @@ namespace L3AQTN_HFT202231.Endpoint
             services.AddTransient<IBrandLogic, BrandLogic>();
             services.AddTransient<IOwnerLogic, OwnerLogic>();
 
-
+            services.AddSignalR();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -75,6 +76,7 @@ namespace L3AQTN_HFT202231.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
