@@ -1,4 +1,5 @@
-﻿using System;
+﻿using L3AQTN_HFT_202231.WpfClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace L3AQTN_HFT_202231.WpfClient.Windows
         public OwnerWindow()
         {
             InitializeComponent();
+            DataContext = new OwnerWindowViewModel();
         }
     }
 }
