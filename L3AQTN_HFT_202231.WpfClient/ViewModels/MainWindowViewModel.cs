@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using L3AQTN_HFT_202231.WpfClient.Windows;
 
 namespace L3AQTN_HFT_202231.WpfClient.ViewModels
 {
@@ -38,7 +39,14 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                     selectedBus = new Bus()
                     {
                         Model = value.Model,
-                        Id = value.Id
+                        Id = value.Id,
+                        BrandId=value.Id,
+                        OwnerId=value.OwnerId,
+                        Owner=value.Owner,
+                        Brand=value.Brand,
+                        Price=value.Price,
+                        
+                        
                     };
                     OnPropertyChanged();
                     (DeleteBusCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -52,6 +60,10 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
         public ICommand DeleteBusCommand { get; set; }
 
         public ICommand UpdateBusCommand { get; set; }
+
+        public ICommand OpenOwnerWindowCommand { get; set; }
+
+        public ICommand OpenBrandWindowCommand { get; set; }
 
         public static bool IsInDesignMode
         {
@@ -70,12 +82,27 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                 // Buses = new RestCollection<Bus>("http://localhost:53910/", "bus");
                 Buses = new RestCollection<Bus>("http://localhost:10615/", "bus", "hub");
 
+                OpenOwnerWindowCommand = new RelayCommand(() =>
+                {
+                    var ownerWindow = new OwnerWindow();
+                    ownerWindow.ShowDialog();
+                });
+
+                OpenBrandWindowCommand = new RelayCommand(() =>
+                {
+                    var brandWindow = new BrandWindow();
+                    brandWindow.ShowDialog();
+                });
 
                 CreateBusCommand = new RelayCommand(() =>
                 {
                     Buses.Add(new Bus()
                     {
-                        Model = SelectedBus.Model
+                        Model = SelectedBus.Model,
+                        Price=SelectedBus.Price,
+                       
+                        
+
                     });
                 });
 

@@ -37,7 +37,12 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                     selectedOwner = new Owner()
                     {
                         Name = value.Name,
-                        Id = value.Id
+                        Id = value.Id,
+                        HasMustache=value.HasMustache,
+                        ZIPCode=value.ZIPCode,
+                        Buses=value.Buses,
+                       
+                        
                     };
                     OnPropertyChanged();
                     (DeleteOwnerCommand as RelayCommand).NotifyCanExecuteChanged();
