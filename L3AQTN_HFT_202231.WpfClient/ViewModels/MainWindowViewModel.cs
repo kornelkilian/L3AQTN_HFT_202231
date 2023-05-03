@@ -1,5 +1,4 @@
-﻿using L3AQTN_HFT_202231.WpfClient;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using L3AQTN_HFT_202231.Models;
 using System;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace L3AQTN_HFT_202231.WpfClient
+namespace L3AQTN_HFT_202231.WpfClient.ViewModels
 {
     public class MainWindowViewModel : ObservableRecipient
     {
@@ -68,10 +67,10 @@ namespace L3AQTN_HFT_202231.WpfClient
         {
             if (!IsInDesignMode)
             {
-               // Buses = new RestCollection<Bus>("http://localhost:53910/", "bus");
-                Buses = new RestCollection<Bus>("http://localhost:10615/", "bus","hub");
+                // Buses = new RestCollection<Bus>("http://localhost:53910/", "bus");
+                Buses = new RestCollection<Bus>("http://localhost:10615/", "bus", "hub");
 
-                
+
                 CreateBusCommand = new RelayCommand(() =>
                 {
                     Buses.Add(new Bus()
