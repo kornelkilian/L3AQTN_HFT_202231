@@ -69,7 +69,14 @@ namespace L3AQTN_HFT202231.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
+           app.UseCors(x => x
+          .AllowCredentials()
+          .AllowAnyMethod()
+          .AllowAnyHeader()
+          .WithOrigins("http://localhost:6556"));
+
             app.UseRouting();
+
 
             app.UseAuthorization();
 
