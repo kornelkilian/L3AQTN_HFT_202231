@@ -1,9 +1,11 @@
 ﻿using L3AQTN_HFT_202231.Logic;
 using L3AQTN_HFT_202231.Models;
+using L3AQTN_HFT202231.Endpoint.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace L3AQTN_HFT202231.Endpoint.Controllers
 {
@@ -12,48 +14,53 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
     public class BrandController : ControllerBase
     {
         IBrandLogic logic;
-
-        public BrandController(IBrandLogic logic)
+        IHubContext<SignalRHub> hub;
+        public BrandController(IBrandLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
 
 
-
-        // GET: api/<OwnerController>
+        // GET: api/<BrandController>
         [HttpGet]
         public IEnumerable<Brand> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
-        // GET api/<OwnerController>/5
+        // GET api/<BrandController>/5
         [HttpGet("{id}")]
         public Brand Read(int id)
         {
             return logic.Read(id);
         }
 
-        // POST api/<OwnerController>
+        // POST api/<BrandController>
         [HttpPost]
         public void Create([FromBody] Brand value)
         {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("BrandCreated", value);
         }
 
-        // PUT api/<OwnerController>/5
+        // PUT api/<BrandController>/5
         [HttpPut]
         public void Update([FromBody] Brand value)
         {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("BrandUpdated", value);
+
         }
 
-        // DELETE api/<OwnerController>/5
+        // DELETE api/<BrandController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var brandToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("BrandDeleted", brandToDelete);
         }
     }
 }
