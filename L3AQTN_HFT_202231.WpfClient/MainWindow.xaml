@@ -26,7 +26,11 @@
             <Label Content="Model Name" Background="LightBlue" Padding="10" />
             <TextBox Text="{Binding SelectedBus.Model}" Padding="10" Margin="0,0,0,30" />
             <Label Content="Bus Price" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding SelectedBus.Price}" Padding="10" Margin="0,0,0,30" />
+            <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding SelectedBus.Price}" Padding="10" Margin="0,0,0,30" />
+            <Label Content="Brand Id" Background="LightBlue" Padding="10" />
+            <TextBox Text="{Binding SelectedBus.BrandId}" Padding="10" Margin="0,0,0,30" />
+            <Label Content="Owner Id" Background="LightBlue" Padding="10" />
+            <TextBox Text="{Binding SelectedBus.OwnerId}" Padding="10" Margin="0,0,0,30" />
            
             <Button Content="Create Bus" Command="{Binding CreateBusCommand}" Margin="10" Padding="10" />
             <Button Content="Delete Bus" Command="{Binding DeleteBusCommand}" Margin="10" Padding="10" />

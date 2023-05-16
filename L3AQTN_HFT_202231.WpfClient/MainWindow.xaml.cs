@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,5 +25,15 @@ namespace L3AQTN_HFT_202231.WpfClient
         {
             InitializeComponent();
         }
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Regular expression pattern to match only numeric input
+            Regex regex = new Regex("[^0-9]+");
+
+            // Check if the input matches the pattern
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
     }
 }
