@@ -80,11 +80,20 @@ function remove(id) {
 
 function create() {
     let name = document.getElementById('modelname').value;
+    let price_ = document.getElementById('price').value;
+    let brand = document.getElementById('brandid').value;
+    let owner = document.getElementById('ownerid').value;
+
     fetch('http://localhost:10615/bus', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { model: name })
+            {
+                model: name,
+                price: price_,
+                ownerId: owner,
+                brandId: brand,
+            }),
     })
         .then(response => response)
         .then(data => {
