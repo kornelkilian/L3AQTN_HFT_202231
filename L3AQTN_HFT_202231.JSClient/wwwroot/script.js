@@ -63,7 +63,7 @@ function display() {
     buses.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
             "<tr><td>" + t.id + "</td><td>"
-            + t.model + "</td><td>" +
+        + t.model + "</td><td>" + t.brandId + "</td><td>" + t.ownerId + "</td><td>" + 
         `<button type="button" onclick="remove(${t.id})">Delete</button>` +
         `<button type="button" onclick="showupdate(${t.id})">Update</button>`
 
