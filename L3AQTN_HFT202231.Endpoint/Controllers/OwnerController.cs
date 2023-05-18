@@ -14,12 +14,14 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
     public class OwnerController : ControllerBase
     {
         IOwnerLogic logic;
+        IBusLogic buslogic;
         IHubContext<SignalRHub> hub;
 
-        public OwnerController(IOwnerLogic logic, IHubContext<SignalRHub> hub)
+        public OwnerController(IOwnerLogic logic, IHubContext<SignalRHub> hub, IBusLogic buslogic)
         {
             this.logic = logic;
             this.hub = hub;
+            this.buslogic = buslogic;
         }
 
 
@@ -59,6 +61,17 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
         {
             var ownerToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            var cascadedellist = this.buslogic.ReadAll();
+            foreach (var bus in cascadedellist)
+            {
+                if (bus.BrandId == id)
+                {
+                    buslogic.Delete(bus.Id);
+                    this.hub.Clients.All.SendAsync("BusDeleted", bus);
+
+                }
+
+            }
             this.hub.Clients.All.SendAsync("OwnerDeleted", ownerToDelete);
         }
     }

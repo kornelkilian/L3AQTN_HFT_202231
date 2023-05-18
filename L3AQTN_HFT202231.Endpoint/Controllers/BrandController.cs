@@ -14,11 +14,14 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
     public class BrandController : ControllerBase
     {
         IBrandLogic logic;
+        IBusLogic buslogic;
+
         IHubContext<SignalRHub> hub;
-        public BrandController(IBrandLogic logic, IHubContext<SignalRHub> hub)
+        public BrandController(IBrandLogic logic, IHubContext<SignalRHub> hub, IBusLogic busLogi)
         {
             this.logic = logic;
             this.hub = hub;
+            this.buslogic = busLogi;
         }
 
 
@@ -50,6 +53,7 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
         public void Update([FromBody] Brand value)
         {
             this.logic.Update(value);
+
             this.hub.Clients.All.SendAsync("BrandUpdated", value);
 
         }
@@ -60,6 +64,17 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
         {
             var brandToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            var cascadedellist = this.buslogic.ReadAll();
+            foreach (var bus in cascadedellist)
+            {
+                if (bus.BrandId==id)
+                {
+                    buslogic.Delete(bus.Id);
+                    this.hub.Clients.All.SendAsync("BusDeleted", bus);
+
+                }
+
+            }
             this.hub.Clients.All.SendAsync("BrandDeleted", brandToDelete);
         }
     }
