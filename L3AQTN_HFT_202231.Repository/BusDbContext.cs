@@ -53,14 +53,15 @@ namespace L3AQTN_HFT_202231.Repository
                             entity.HasOne(bus => bus.Brand)
                             .WithMany(brand => brand.Buses)
                             .HasForeignKey(bus => bus.BrandId)
-                            .OnDelete(DeleteBehavior.ClientSetNull));
+                            .OnDelete(DeleteBehavior.Cascade));
 
             modelBuilder.Entity<Bus>(entity =>
                           entity.HasOne(bus => bus.Owner)
                           .WithMany(owner => owner.Buses)
                           .HasForeignKey( bus=> bus.OwnerId)
-                          .OnDelete(DeleteBehavior.ClientSetNull));
+                          .OnDelete(DeleteBehavior.Cascade));
 
+            
 
 
             modelBuilder.Entity<Owner>().HasData(owner, owner2);
