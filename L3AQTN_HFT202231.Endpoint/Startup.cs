@@ -38,7 +38,7 @@ namespace L3AQTN_HFT202231.Endpoint
             services.AddTransient<IRepository<Brand>,BrandRepository>();
             services.AddTransient<IRepository<Owner>, OwnerRepository>();
 
-            services.AddTransient<IBusLogic, BusLogic>();
+            services.AddSingleton<IBusLogic, BusLogic>();
             services.AddTransient<IBrandLogic, BrandLogic>();
             services.AddTransient<IOwnerLogic, OwnerLogic>();
 
