@@ -24,6 +24,9 @@
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="LightBlue" Padding="10" />
             <TextBox Text="{Binding SelectedBrand.Name}" Padding="10" Margin="0,0,0,30" />
+            <Label Content="Country" Background="LightBlue" Padding="10" />
+            <TextBox Text="{Binding SelectedBrand.Country}" Padding="10" Margin="0,0,0,30" />
+
             <Button Content="Create Brand" Command="{Binding CreateBrandCommand}" Margin="10" Padding="10" />
             <Button Content="Delete Brand" Command="{Binding DeleteBrandCommand}" Margin="10" Padding="10" />
             <Button Content="Update Brand" Command="{Binding UpdateBrandCommand}" Margin="10" Padding="10" />
