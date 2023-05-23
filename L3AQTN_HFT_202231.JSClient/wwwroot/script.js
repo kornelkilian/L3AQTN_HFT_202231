@@ -5,6 +5,7 @@
 document.getElementById('updateformdiv').style.display = 'none';
 
 let buses = [];
+let noncrud =null;
 let connection = null;
 let busIdToUpdate = -1;
 getdata();
@@ -70,6 +71,20 @@ function display() {
 
             + "</td></tr>";
     });
+}
+
+function NonCrud() {
+    let input = document.getElementById('noncrudinput').value;
+    fetch('http://localhost:10615/Stat/AvaragePriceByOwner/' + input)
+        .then(response => response.text())
+        .then(data => {
+      
+            document.getElementById('displaynoncrud').textContent = "Price: " + data;
+        })
+        .catch(error => {
+            
+            console.error('Error:', error);
+        });
 }
 
 function showupdate(id) {

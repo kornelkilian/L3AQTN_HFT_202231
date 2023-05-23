@@ -18,6 +18,23 @@ th {
     background-color: lightblue;
 }
 
+#noncruddiv {
+    display: flex;
+    flex-direction: row; /* Display content in a row */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+    #noncruddiv label, button, input {
+        margin: 10px;
+        padding: 7px;
+    }
+
+    #noncruddiv label {
+        font-weight: bolder;
+    }
+
+
 #formdiv {
     display: flex;
     flex-direction: column;
