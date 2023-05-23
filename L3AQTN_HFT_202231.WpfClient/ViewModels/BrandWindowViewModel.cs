@@ -34,6 +34,7 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                     {
                         Name = value.Name,
                         Id = value.Id
+                        ,Country = value.Country,
                     };
                     OnPropertyChanged();
                     (DeleteBrandCommand as RelayCommand).NotifyCanExecuteChanged();
