@@ -23,6 +23,8 @@
             <TextBox Text="{Binding SelectedOwner.Name}" Padding="10" Margin="0,0,0,30" />
             <Label Content="Has Mustache" Background="LightBlue" Padding="10" />
             <CheckBox IsChecked="{Binding SelectedOwner.HasMustache}" Padding="10" Margin="0,0,0,30" />
+            <Label Content="ZIPCode" Background="LightBlue" Padding="10" />
+            <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding SelectedOwner.ZIPCode}" Padding="10" Margin="0,0,0,30" />
 
             <Button Content="Create Owner" Command="{Binding CreateOwnerCommand}" Margin="10" Padding="10" />
             <Button Content="Delete Owner" Command="{Binding DeleteOwnerCommand}" Margin="10" Padding="10" />

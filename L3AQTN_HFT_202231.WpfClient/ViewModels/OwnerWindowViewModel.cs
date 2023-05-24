@@ -77,6 +77,7 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                     {
                         Name = SelectedOwner.Name
                         ,HasMustache=SelectedOwner.HasMustache,
+                        ZIPCode=SelectedOwner.ZIPCode,
                     });
                 });
 
