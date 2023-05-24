@@ -76,6 +76,7 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
                     Owners.Add(new Owner()
                     {
                         Name = SelectedOwner.Name
+                        ,HasMustache=SelectedOwner.HasMustache,
                     });
                 });
 
