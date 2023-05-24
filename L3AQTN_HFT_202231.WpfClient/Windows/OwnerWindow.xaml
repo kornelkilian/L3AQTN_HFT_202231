@@ -21,6 +21,7 @@
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="LightBlue" Padding="10" />
             <TextBox Text="{Binding SelectedOwner.Name}" Padding="10" Margin="0,0,0,30" />
+
             <Button Content="Create Owner" Command="{Binding CreateOwnerCommand}" Margin="10" Padding="10" />
             <Button Content="Delete Owner" Command="{Binding DeleteOwnerCommand}" Margin="10" Padding="10" />
             <Button Content="Update Owner" Command="{Binding UpdateOwnerCommand}" Margin="10" Padding="10" />

@@ -33,7 +33,7 @@ namespace L3AQTN_HFT_202231.Repository
             context.SaveChanges();
         }
 
-        public void Delete(int i)
+        public  void Delete(int i)
         {
             context.Set<T>().Remove(Read(i));
             context.SaveChanges();

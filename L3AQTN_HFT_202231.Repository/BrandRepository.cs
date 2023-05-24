@@ -23,6 +23,8 @@ namespace L3AQTN_HFT_202231.Repository
             return context.Brands.FirstOrDefault(b => b.Id == i);
         }
 
+        
+
         public override void Update(Brand  brand)
         {
             var sourceItem = Read(brand.Id);

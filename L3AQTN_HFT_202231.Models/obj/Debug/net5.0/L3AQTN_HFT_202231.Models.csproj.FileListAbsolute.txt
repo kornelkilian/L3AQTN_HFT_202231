@@ -10,3 +10,15 @@
 /Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/Debug/net5.0/refint/L3AQTN_HFT_202231.Models.dll
 /Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/Debug/net5.0/L3AQTN_HFT_202231.Models.pdb
 /Users/kornel/Documents/GitHub/L3AQTN_HFT_202231/L3AQTN_HFT_202231.Models/obj/Debug/net5.0/ref/L3AQTN_HFT_202231.Models.dll
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.deps.json
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.dll
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\bin\Debug\net5.0\L3AQTN_HFT_202231.Models.pdb
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.csproj.AssemblyReference.cache
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.AssemblyInfoInputs.cache
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.AssemblyInfo.cs
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.csproj.CoreCompileInputs.cache
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.dll
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\refint\L3AQTN_HFT_202231.Models.dll
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\L3AQTN_HFT_202231.Models.pdb
+C:\Users\kilia\Documents\GitHub\L3AQTN_HFT_202231\L3AQTN_HFT_202231.Models\obj\Debug\net5.0\ref\L3AQTN_HFT_202231.Models.dll

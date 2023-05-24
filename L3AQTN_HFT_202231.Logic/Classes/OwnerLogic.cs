@@ -11,6 +11,8 @@ namespace L3AQTN_HFT_202231.Logic
     public class OwnerLogic : IOwnerLogic
     {
         IRepository<Owner> repo;
+        IRepository<Bus> busrepo;
+
 
         public OwnerLogic(IRepository<Owner> repo)
         {
@@ -25,6 +27,8 @@ namespace L3AQTN_HFT_202231.Logic
         public void Delete(int id)
         {
            this.repo.Delete(id);
+           
+
         }
 
         public Owner Read(int id)

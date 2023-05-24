@@ -26,6 +26,8 @@ namespace L3AQTN_HFT_202231.Repository
             return context.Buses.FirstOrDefault(t => t.Id == i);
         }
 
+        
+
         public override void Update(Bus bus)
         {
             var sourceItem = Read(bus.Id);

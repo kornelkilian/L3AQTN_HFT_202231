@@ -160,7 +160,7 @@ namespace L3AQTN_HFT_202231.WpfClient
         {
             HttpResponseMessage response =
                 await client.PostAsJsonAsync(endpoint, item);
-
+            
             if (!response.IsSuccessStatusCode)
             {
                 var error = await response.Content.ReadAsAsync<RestExceptionInfo>();

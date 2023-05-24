@@ -10,6 +10,7 @@ namespace L3AQTN_HFT_202231.Logic
 {
     public class BrandLogic : IBrandLogic
     {
+        IRepository<Bus> busrepo;
         IRepository<Brand> repo;
 
         public BrandLogic(IRepository<Brand> repo)
@@ -26,6 +27,7 @@ namespace L3AQTN_HFT_202231.Logic
         public void Delete(int id)
         {
             this.repo.Delete(id);
+           
         }
 
         public Brand Read(int id)

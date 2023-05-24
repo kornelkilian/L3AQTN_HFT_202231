@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj": {}
+    "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj": {
+    "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj",
+        "projectUniqueName": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj",
         "projectName": "L3AQTN_HFT_202231.Client",
-        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj",
-        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\obj\\",
+        "projectPath": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\L3AQTN_HFT_202231.Client.csproj",
+        "packagesPath": "C:\\Users\\kilia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -36,8 +36,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
-                "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj"
+              "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
+                "projectPath": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj"
               }
             }
           }
@@ -93,21 +93,21 @@
         }
       }
     },
-    "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
+    "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
+        "projectUniqueName": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
         "projectName": "L3AQTN_HFT_202231.Models",
-        "projectPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
-        "packagesPath": "C:\\Users\\kilma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kilma\\OneDrive\\Dokumentumok\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\obj\\",
+        "projectPath": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\L3AQTN_HFT_202231.Models.csproj",
+        "packagesPath": "C:\\Users\\kilia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kilia\\Documents\\GitHub\\L3AQTN_HFT_202231\\L3AQTN_HFT_202231.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kilma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
