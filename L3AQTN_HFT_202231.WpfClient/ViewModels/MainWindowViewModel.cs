@@ -33,8 +33,20 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
             get { return selectedBus; }
             set
             {
-                SetProperty(ref selectedBus, value);
-                (UpdateBusCommand as RelayCommand).NotifyCanExecuteChanged();
+                if (value!=null)
+                {
+                    selectedBus = new Bus() {
+                    BrandId=value.BrandId,
+                    Model=value.Model,
+                    OwnerId=value.OwnerId,
+                    Price=value.Price,
+                    Id=value.Id,
+
+                    };
+
+                }
+                OnPropertyChanged();
+                
                 (DeleteBusCommand as RelayCommand).NotifyCanExecuteChanged();
               
 
@@ -83,7 +95,13 @@ namespace L3AQTN_HFT_202231.WpfClient.ViewModels
 
                 CreateBusCommand = new RelayCommand(() =>
                 {
-                    Bus newBus = new Bus(selectedBus);
+                    Bus newBus = new Bus(SelectedBus);
+                    newBus.BrandId = SelectedBus.BrandId;
+                    newBus.Model = SelectedBus.Model;
+                    newBus.Price = SelectedBus.Price;
+                    newBus.OwnerId = SelectedBus.OwnerId;
+                    Buses.Add(newBus);
+                   
                 });
 
                 UpdateBusCommand = new RelayCommand(() =>
