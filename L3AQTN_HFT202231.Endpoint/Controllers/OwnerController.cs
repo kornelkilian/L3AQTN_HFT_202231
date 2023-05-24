@@ -64,7 +64,7 @@ namespace L3AQTN_HFT202231.Endpoint.Controllers
             var cascadedellist = this.buslogic.ReadAll();
             foreach (var bus in cascadedellist)
             {
-                if (bus.BrandId == id)
+                if (bus.OwnerId == id)
                 {
                     buslogic.Delete(bus.Id);
                     this.hub.Clients.All.SendAsync("BusDeleted", bus);
